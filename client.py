@@ -166,7 +166,7 @@ def receive(client: socket.socket, chat_screen : tk.Text) -> None:
             elif data.startswith('user_left/') or data.startswith('user_kicked/') or data.startswith('user_timeout/'):
                 action, name = data.split("/")
                 # Determine the type of action (left, been kicked or timed out) from the message type
-                action = {'user_left': 'left', 'user_kicked': 'been kicked by the ADMIN', 'user_timeout': 'timed out'}[action]
+                action = {'user_left': 'left', 'user_kicked': 'been kicked by the ADMIN from', 'user_timeout': 'been timed out from'}[action]
                 # Update the chat window
                 display_message(chat_screen, f'{name} has {action} the chat room', 'system')
                 # Remove the user from the active users tab
