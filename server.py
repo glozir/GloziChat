@@ -393,7 +393,7 @@ def handle_connections(server_socket: socket.socket) -> None:
 
     # password for closing the server 
     close_server_password = random.randint(10000,99999)
-    print('to close the server enter password:', close_server_password)
+    print('to close the server enter code:', close_server_password)
 
     while True:
         # Get the list sockets which are ready to be read or write through select

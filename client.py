@@ -166,7 +166,7 @@ def receive(client: socket.socket, chat_screen : tk.Text) -> None:
             elif data.startswith('user_left/') or data.startswith('user_kicked/') or data.startswith('user_timeout/'):
                 action, name = data.split("/")
                 # Determine the type of action (left, been kicked or timed out) from the message type
-                action = {'user_left': 'left', 'user_kicked': 'been kicked by the ADMIN from', 'user_timeout': 'been timed out from'}[action]
+                action = {'user_left': 'left', 'user_kicked': 'been kicked by the ADMIN from', 'user_timeout': 'been timed out'}[action]
                 # Update the chat window
                 display_message(chat_screen, f'{name} has {action} the chat room', 'system')
                 # Remove the user from the active users tab
@@ -1065,7 +1065,7 @@ def create_help_window() -> None:
 
     # Set the window size and position
     window_width = 635
-    window_height = 370
+    window_height = 385
     screen_width = help_window.winfo_screenwidth()
     screen_height = help_window.winfo_screenheight()
     x = int((screen_width/2) - (window_width/2))
@@ -1092,7 +1092,8 @@ def create_help_window() -> None:
     You may choose between the avaliable sessions, or create a session for yourself.
     If you choose to join a session, you need to know the code of it before joining.
     Another option is to join a session without a code, sessions without a code are marked 'NO CODE'.
-    When entering a session you will be required to enter your username and code if needed.
+    When entering a session you will be required to enter your username and code if needed. 
+    To enter a session double click on the session you would like to join
     When creating a session you will be required to create a session name, code, and add your username. 
     Leaving the password entry empty will create a session with no code.
     EXIT code is meant for closing the server if you are provided with the server exit code. 
@@ -1148,6 +1149,20 @@ def check_server_connection(client: socket.socket) -> None:
             print('Server has disconnected quitting...')
             close_client()
 
+def on_toplevel_close() -> None:
+    '''
+    Destroy root if window is closed by the user before joing a session
+    
+    Args:
+        None.
+        
+    Returns:
+        None.
+    
+    '''
+    if window.wm_protocol("WM_DELETE_WINDOW"):
+        root.destroy()
+
 
 if __name__ == "__main__":
     # Create a client socket and connect to the server
@@ -1156,6 +1171,7 @@ if __name__ == "__main__":
     # Create root and session list window
     root = setup_root()
     window = create_session_list_window(root, client)
+    window.protocol("WM_DELETE_WINDOW", on_toplevel_close)
     
     # Create a new thread to check connectivity 
     check_server_connection_thread = Thread(target=check_server_connection, args=(client,))
