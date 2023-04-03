@@ -1,0 +1,76 @@
+RFC: Chat Room App Commands and Expected Input/Output
+This RFC document describes the commands available in the Chat Room App and the expected input and output for each command.
+
+Session Management Commands
+
+Join a Session
+Users can join an existing session by entering the session code or join a session without a code (marked "NO CODE"). 
+To join a session that requires a password, users must enter the correct 5-digit password to join. When joining a session, 
+users must enter a username that consists of 3 to 12 characters and cannot start with a digit.
+
+Command: GUI 
+
+Expected Input:
+session_code: The session code to join. If no session code is provided, the user will be prompted to select a session from the available sessions list.
+username: The username to use in the session. It must consist of 3 to 12 characters and cannot start with a digit.
+password (optional): The password to join a session that requires a password. If no password is provided and the session requires a password, the user will be prompted to enter the password.
+
+Expected Output:
+If the session exists and the password is correct, the user will join the session and the chat window will be displayed.
+
+Create a Session
+Users can create their own session by entering a session name that consists of 3 to 12 characters and cannot start with a digit. 
+When creating a session, users can optionally set a 5-digit password that consists of only numerical characters. Sessions with a password require users to enter the correct password to join.
+
+Command: GUI
+
+Expected Input:
+session_name: The name of the session to create. It must consist of 3 to 12 characters and cannot start with a digit.
+password (optional): The password to set for the session. It must consist of 5 numerical characters.
+
+Expected Output:
+If the session is created successfully, the user will join the session and the chat window will be displayed.
+
+Close the server
+users can provide a special code available only on the server stdout that will close the server and disconnect all connected clients.
+
+Command: GUI
+
+Expected Input:
+Close code: The password set for closing the server. It must consist of 5 numerical characters.
+
+Expected Output:
+If the password provided is correct server will close, otherwise the server will continue as normal.
+
+
+Chat Room Commands 
+
+Here are the commands available in the chat room app:
+
+/help: Displays a list of available commands and their descriptions.
+Input: None
+Output: A message displaying the available commands and their descriptions.
+
+/quote: Returns a random quote.
+Input: None
+Output: A message displaying a random quote.
+
+/time: Returns the current server time.
+Input: None
+Output: A message displaying the current server time.
+
+/echo [text]: Echoes the provided text back to the user.
+Input: A string of text to be echoed back to the user.
+Output: A message displaying the echoed text.
+
+/kick [member]: Kicks the specified member from the session. This command can only be used by the admin of the session.
+Input: The username of the member to be kicked.
+Output: A message indicating that the specified member has been kicked from the session.
+
+/quit: Disconnects the user from the session.
+Input: None
+Output: A message indicating that the user has been disconnected from the session.
+
+/close: Closes the session. This command can only be used by the admin of the session.
+Input: None
+Output: A message indicating that the session has been closed.
