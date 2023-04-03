@@ -51,6 +51,12 @@ The app requires Python and the following libraries:
   - tkinter
   - PIL
 
+Additionally, the app requires the following files:
+
+  - client.py: the client-side code for the chat room app
+  - utils.py: a utility module used by both the client and server
+  - server.py: the server-side code for the chat room app
+
 
 ### Conclusion
 The chat room app provides users with a secure and flexible way to communicate with each other. Its use of Python and Tkinter ensures a stable and user-friendly experience, and its added features of admin privileges and the ability to close the server from the client side further enhance the app's functionality and convenience.
