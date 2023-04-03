@@ -24,7 +24,8 @@ Admins have additional privileges within chat sessions. They cannot be timed out
 The app includes a 4-minute inactivity timeout that disconnects users who have not sent any messages for the duration of the timeout. Admins are exempt from this timeout.
 
 ### Server Exit Code
-The app includes a server exit code that allows users with access to the server to close it. The exit code is displayed on the server side and can be used from the client side by entering the correct code after using the /close command. The server exit code is only available to users who have access to the server.
+The app includes a server exit code that allows users with access to the server to close it. The exit code is displayed on the server side and can be used from the client side by entering the correct code in the sessions window, after entering it the server will disconnect all clients and close itself. 
+The server exit code is only available to users who have access to the server.
 
 ### User Interface
 The app uses the Tkinter GUI library to provide a user-friendly interface for creating and joining chat sessions. Users can see a list of available sessions and join them by entering the session code or create their own session by entering a session name and, optionally, a password. Within a chat session, users can send messages, see other users' messages, and use the available commands.
