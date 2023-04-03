@@ -1,5 +1,5 @@
 # Chat Room App
-This Python-based chat room app provides users with a secure and flexible way to communicate with each other. The app's use of the Tkinter GUI library ensures a stable and user-friendly experience, and its proper error handling and logging capabilities help to ensure that the app runs smoothly and with minimal issues.
+This RFC describes a chat room app that allows users to join existing sessions or create new ones. Each session has an admin who can use multiple commands and kick users. The app is written in Python and uses Tkinter for the GUI.
 
 ## Features
 
