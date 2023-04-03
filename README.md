@@ -25,11 +25,10 @@ Admins have additional privileges within chat sessions. They cannot be timed out
 The app includes a 4-minute inactivity timeout that disconnects users who have not sent any messages for the duration of the timeout. Admins are exempt from this timeout.
 
 ### Server Exit Code
-The app includes a server exit code that allows users with access to the server to close it. The exit code is displayed on the server side and can be used from the client side by entering the correct code in the sessions window, after entering it the server will disconnect all clients and close itself. 
+The app includes a server exit code that allows users with access to the server to close it. The exit code is displayed on the server side (stdout) and can be used from the client side by entering the correct code in the sessions window, after entering it the server will disconnect all clients and close itself. 
 The server exit code is only available to users who have access to the server.
 
-### User Interface
-The app uses the Tkinter GUI library to provide a user-friendly interface for creating and joining chat sessions. Users can see a list of available sessions and join them by entering the session code or create their own session by entering a session name and, optionally, a password. Within a chat session, users can send messages, see other users' messages, and use the available commands.
+![image](https://user-images.githubusercontent.com/93617974/229585623-2e07fff2-f083-4d13-93b6-061a86a264d2.png)
 
 ### Connection Process
 The app's connection process allows for the creation and joining of chat sessions without prior knowledge of the server or other users. The client sends a ping broadcast packet within the local area network, and the server sniffs the packet and extracts the host and port values. Meanwhile, the client sets up a UDP socket using the host and port values it provided to the server. The server sends back a message containing its own IP address and port number to the UDP socket that the client just set up. This message contains the necessary information for the client to establish a TCP connection with the server.
@@ -37,11 +36,14 @@ The app's connection process allows for the creation and joining of chat session
 ### Security Considerations
 The app includes a password feature that provides an additional layer of security for sessions.
 
-### Graphics
+### Graphics and User Interface 
 
-The chat room app features a graphical user interface (GUI) that provides a professional and easy-to-use platform for users to communicate with each other. The chat graphics window displays the chat messages and the list of active users in the session. In addition, it displays the name and code of the current session in the top corner of the window.
+The chat room app features a graphical user interface (GUI) that provides an easy-to-use platform for users to communicate with each other. The chat graphics window displays the chat messages and the list of active users in the session. In addition, it displays the name and code of the current session in the top corner of the window.
 
-![image](https://user-images.githubusercontent.com/93617974/229581463-3bf80123-17ac-403d-a049-85abd31fce8e.png)
+![image](https://user-images.githubusercontent.com/93617974/229588148-5de98b67-b4c9-4e48-bef9-947489ad2f5a.png)
+
+
+![image](https://user-images.githubusercontent.com/93617974/229588318-c27a643c-769f-4f4c-b08f-f136378375ad.png)
 
 The session list window lists all available sessions and includes information about each session, such as the number of active users, the creation time, the creator's username, and whether a password is required to join. This window also features three buttons, one for reloading the session list, one for creating a new session, and the third for displaying general information about the app, represented by a question mark icon.
 
@@ -60,7 +62,7 @@ To use the chat room app, follow these steps:
   4. Run the server.py file by typing "python server.py" and pressing enter.
   5. Open a new terminal window or run the client.py file on a different computer.
   6. Run the client.py file by typing "python client.py" and pressing enter.
-  7. join an existing session or create a new session.
+  7. join an existing session or create a new session (to join a session double click on it).
   8. Begin communicating with other users within the session.
 
   Note: If you want to run multiple clients on the same machine, each client must be run in a separate terminal window.
