@@ -1,10 +1,11 @@
 # Chat Room App
-This RFC describes a chat room app that allows users to join existing sessions or create new ones. Each session has an admin who can use multiple commands and kick users. The app is written in Python and uses Tkinter for the GUI.
+This chat room app is a Python application that provides a flexible and secure way for users to communicate with each other. Each session has an admin who can use multiple commands and kick users. The app is written in Python and uses Tkinter for the GUI to ensure a stable and user-friendly experience.
 
 ## Features
 
 ### Session Management
-Users can join an existing session by entering the session code or join a session without a code (marked "NO CODE"). When joining a session, users must enter a username that consists of 3 to 12 characters and cannot start with a digit. Users can also create their own session by entering a session name that consists of 3 to 12 characters and cannot start with a digit. When creating a session, users can optionally set a 5-digit password that consists of only numerical characters. Sessions with a password require users to enter the correct password to join.
+Users can join an existing session by entering the session code or join a session without a code (marked "NO CODE"). 
+When joining a session that requires a password, users must enter the correct 5-digit password to join. When joining a session, users must enter a username that consists of 3 to 12 characters and cannot start with a digit. Users can also create their own session by entering a session name that consists of 3 to 12 characters and cannot start with a digit. When creating a session, users can optionally set a 5-digit password that consists of only numerical characters. Sessions with a password require users to enter the correct password to join.
 
 ### User Commands
 The app includes several commands that users can use within chat sessions, including:
@@ -36,6 +37,34 @@ The app's connection process allows for the creation and joining of chat session
 ### Security Considerations
 The app includes a password feature that provides an additional layer of security for sessions.
 
+### Graphics
+
+The chat room app features a graphical user interface (GUI) that provides a professional and easy-to-use platform for users to communicate with each other. The chat graphics window displays the chat messages and the list of active users in the session. In addition, it displays the name and code of the current session in the top corner of the window.
+
+![image](https://user-images.githubusercontent.com/93617974/229581463-3bf80123-17ac-403d-a049-85abd31fce8e.png)
+
+The session list window lists all available sessions and includes information about each session, such as the number of active users, the creation time, the creator's username, and whether a password is required to join. This window also features three buttons, one for reloading the session list, one for creating a new session, and the third for displaying general information about the app, represented by a question mark icon.
+
+Moreover, the session list window enables users to enter the server exit code, which allows authorized users to close the server.
+
+![image](https://user-images.githubusercontent.com/93617974/229581678-52a163ff-1b08-4bad-9287-952f25d92288.png)
+
+
+### Usage
+
+To use the chat room app, follow these steps:
+
+  1. Ensure that Python and the required libraries are installed on your machine.
+  2. Download the client.py, utils.py, server.py, question_mark.png and check_mark.png files.
+  3. Open a command prompt or terminal and navigate to the directory where the files are located.
+  4. Run the server.py file by typing "python server.py" and pressing enter.
+  5. Open a new terminal window or run the client.py file on a different computer.
+  6. Run the client.py file by typing "python client.py" and pressing enter.
+  7. join an existing session or create a new session.
+  8. Begin communicating with other users within the session.
+
+  Note: If you want to run multiple clients on the same machine, each client must be run in a separate terminal window.
+
 ### Requirements
 The app requires Python and the following libraries:
 
@@ -56,7 +85,8 @@ Additionally, the app requires the following files:
   - client.py: the client-side code for the chat room app
   - utils.py: a utility module used by both the client and server
   - server.py: the server-side code for the chat room app
-
+  - question_mark.png : a picture used for a button in the session list window
+  - check_mark.png : a picture used for a button in the session list window 
 
 ### Conclusion
 The chat room app provides users with a secure and flexible way to communicate with each other. Its use of Python and Tkinter ensures a stable and user-friendly experience, and its added features of admin privileges and the ability to close the server from the client side further enhance the app's functionality and convenience.
