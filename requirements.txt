@@ -1,0 +1,11 @@
+beautifulsoup4==4.12.3
+bs4==0.0.2
+certifi==2024.6.2
+charset-normalizer==3.3.2
+idna==3.7
+pillow==10.3.0
+requests==2.32.3
+scapy==2.5.0
+soupsieve==2.5
+tk==0.1.0
+urllib3==2.2.1
